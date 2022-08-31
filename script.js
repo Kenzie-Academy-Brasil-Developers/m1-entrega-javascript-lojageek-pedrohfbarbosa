@@ -1,54 +1,36 @@
-let imagemProduto = document.createElement("img")
-imagemProduto.src = "./assets/img/painting/clock.jpg"
-
-let imagemProduto2 = document.createElement("img")
-imagemProduto2.src = "./assets/img/painting/gamepad.jpg"
-
-let imagemProduto3 = document.createElement("img")
-imagemProduto3.src = "./assets/img/painting/personagem.jpg"
-
-let imagemProduto4 = document.createElement("img")
-imagemProduto4.src = "./assets/img/actions/animewoman.jpg"
-
-let imagemProduto5 = document.createElement("img")
-imagemProduto5.src = "./assets/img/actions/dragonballpersonagem.jpg"
-
-let imagemProduto6 = document.createElement("img")
-imagemProduto6.src = "./assets/img/actions/starwarspersonagem.jpg"
-
 let itens = [
     {
-        image: imagemProduto,
+        image: "./assets/img/painting/clock.jpg",
         name: "Clock",
         price: "R$100,00",
         type: "painting"
      },
     {
-       image: imagemProduto2,
+       image: "./assets/img/painting/gamepad.jpg",
        name: "Gamepad",
        price: "R$150,00",
        type: "painting"
     },   
     {
-        image: imagemProduto3,
+        image: "./assets/img/painting/personagem.jpg",
         name: "Personagem",
         price: "R$200,00",
         type: "painting"
     }, 
     {
-        image: imagemProduto4,
+        image: "./assets/img/actions/animewoman.jpg",
         name: "Anime Woman",
         price: "R$50,00",
         type: "action"
     },
     {
-        image: imagemProduto5,
+        image: "./assets/img/actions/dragonballpersonagem.jpg",
         name: "Goku",
         price: "R$300,00",
         type: "action"
     },
     {
-        image: imagemProduto6,
+        image: "./assets/img/actions/starwarspersonagem.jpg",
         name: "Yoda",
         price: "R$500,00",
         type: "action"
@@ -74,7 +56,9 @@ let secaoPaintings = document.querySelector(".lista-paintings")
 let secaoFigures = document.querySelector(".lista-action")
 
 for (let i = 0; i < listFrames.length; i++){
-    let card = document.createElement("li")    
+    let card = document.createElement("li")
+    let imagemProduto = document.createElement("img")
+    imagemProduto.src = `${listFrames[i].image}`    
     let nome = document.createElement("h2")
     nome.innerText = `${listFrames[i].name}`
     let preco = document.createElement("p")    
@@ -82,13 +66,15 @@ for (let i = 0; i < listFrames.length; i++){
     let div = document.createElement("div") 
     div.appendChild(nome)
     div.appendChild(preco)    
-    card.appendChild(listFrames[i].image)
+    card.appendChild(imagemProduto)
     card.appendChild(div)  
     secaoPaintings.appendChild(card)
 }
 
 for (let i = 0; i < listFigures.length; i++){
-    let card = document.createElement("li")    
+    let card = document.createElement("li")
+    let imagemProduto = document.createElement("img")
+    imagemProduto.src = `${listFigures[i].image}`       
     let nome = document.createElement("h2")
     nome.innerText = `${listFigures[i].name}`
     let preco = document.createElement("p")    
@@ -96,7 +82,7 @@ for (let i = 0; i < listFigures.length; i++){
     let div = document.createElement("div") 
     div.appendChild(nome)
     div.appendChild(preco)    
-    card.appendChild(listFigures[i].image)
+    card.appendChild(imagemProduto)
     card.appendChild(div)  
     secaoFigures.appendChild(card)
 }
