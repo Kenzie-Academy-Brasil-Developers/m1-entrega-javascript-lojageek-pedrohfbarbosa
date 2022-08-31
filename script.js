@@ -86,4 +86,3 @@ for (let i = 0; i < listFigures.length; i++){
     card.appendChild(div)  
     secaoFigures.appendChild(card)
 }
-
